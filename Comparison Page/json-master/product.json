@@ -1,0 +1,24 @@
+[
+          {
+            "name" : "hublot",
+            "price" : "50000",
+            "image" : "images/w1.png"
+            
+        },
+    {
+        "name" : "hublot",
+        "price" : "560000",
+        "image" : "images/w2.png"
+    },
+    {
+        "name" : "hublot",
+        "price" : "450000",
+        "image" : "images/w2.png"
+
+    },
+    {
+        "name" : "hublot",
+        "price" : "760000",
+        "image" : "images/w1.png"
+    }
+]

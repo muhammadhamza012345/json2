@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container p-5">
+        <div class="row" id="watchesrow">
+
+        </div>
+    </div>
+
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+    <script>
+        let wRow = document.querySelector("#watchesrow");
+        let col = "";
+        $.ajax({
+            url : "product.json",
+            success : function(responce){
+                console.log(responce);
+                 responce.forEach(element => {
+                    // console.log(element);
+                    col += `<div class="col-md-3">
+            <div class="card">
+                <img class="card-image-top" src="`+element.image+`" alt="" >
+                <div class="card-body">
+                    <h4 class="card-title">` + element.name + `</h4>
+                    <p class="card-text">` + element.price + `</p>
+                    <a href="detail.html?pid=`+element.id+`&pname=`+element.name+`&pprice=`+element.price+`&pimage=`+element.image+`">details</a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>`
+                });
+                wRow.innerHTML = col;
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+    <link rel="stylesheet" href="/Comparison Page/bootstrap-4.6.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="Products">
+            <div class="col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <h4 class="card-tittle"></h4>
+                <p class="card-text"></p>
+                <p class="p-des"></p>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+    <script>
+        let url = location.href ;
+        console.log(url);
+        let obj = new URL(url);
+        let pId = obj.searchParams.get('pid');
+        let pName = obj.searchParams.get('pname');
+        let pPrice = obj.searchParams.get('pprice');
+        let pImage = obj.searchParams.get('pimage');
+        $(" .card-img-top").attr("src",pImage);
+        $(" .card-tittle").text(pName);
+        $( ".card-text").text(pPrice);
+
+    </script>
+</body>
+</html>

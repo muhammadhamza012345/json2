@@ -1,0 +1,75 @@
+{
+    "bags" : [
+        {
+            "name" : "gucci",
+            "price" : "40000",
+            "image" : "/image 1"
+            
+        },
+        {
+            "name" : "gucci",
+            "price" : "40000",
+            "image" : "/image 1"
+            
+        },
+        {
+            "name" : "gucci",
+            "price" : "40000",
+            "image" : "/image 1"
+            
+        },
+        {
+            "name" : "gucci",
+            "price" : "40000",
+            "image" : "/image 1"
+            
+        }
+
+    ],
+      "watches" : [
+        {
+            "name" : "hublot",
+            "price" : "560000",
+            "image" : "/image 1"
+            
+        },
+    {
+        "name" : "hublot",
+        "price" : "560000",
+        "image" : "/image 1"
+    },
+    {
+        "name" : "hublot",
+        "price" : "560000",
+        "image" : "/image 1"
+
+    },
+    {
+        "name" : "hublot",
+        "price" : "560000",
+        "image" : "/image 1"
+    }
+      ],
+      "perfumes" : [
+        {
+            "name" : "sigar",
+            "price" : "60000",
+            "image" : "/image 1"
+        },
+        {
+            "name" : "sigar",
+            "price" : "60000",
+            "image" : "/image 1"
+        },
+        {
+            "name" : "sigar",
+            "price" : "60000",
+            "image" : "/image 1"
+        },
+        {
+            "name" : "sigar",
+            "price" : "60000",
+            "image" : "/image 1"
+        }
+      ]
+}

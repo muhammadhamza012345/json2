@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="col md-3">
+            <div class="card">
+                <img class="card-image-top" src=""`+ element.image + >
+                <div class="card-body">
+                    <h4 class="card-title"></h4>
+                    <p class="card-text"></p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="jquery-3.7.1.min.js"></script>
+<script src="bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+<script>
+     
+        $.ajax({
+            url: "index.json",
+            success: function (res) {
+            //  console.log(res);
+             for (const key in res) {
+                // console.log(res[key]);
+            //    console.log(typeof(res[key]));
+
+              if (Array.isArray(res[key])){
+                res[key].forEach(element => {
+                    console.log(element + "contact") 
+                    
+                });  
+                }
+                else{
+
+                }
+ 
+              }
+              
+               
+
+
+            }
+        })
+    </script>
+</script>
+</html>

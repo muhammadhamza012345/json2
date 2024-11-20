@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Page</title>
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center pt-5">PERFUMES COMPARISON</h1>
+        <div class="row">
+
+           
+            <div class="col-md-6">
+                <div class="form-group mt-5">
+                  <center><label for="">Select J. Products</label></center>
+                  <select class="form-control mt-2" name="" id="jProduct">
+                    <option>Select</option>
+                  </select>
+                </div>
+                <!-- end form group -->
+                 <div class="col-md-6">
+                    <div class="card">
+                        <img class="card-img-top" id="jImage" src="Images/picture.png" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title text-center" id="jTitle"></h4>
+                            <h6 class="card-description text-justify text-center" id="jdescription"></h6>
+                            <p class="card-text text-center pt-3" id="jText"></p>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+           
+
+
+            <div class="col-md-6">
+                <div class="form-group mt-5">
+                    <center><label for="">Select Bonanza Products</label></center>
+                    <select class="form-control mt-2" name="" id="bProduct">
+                      <option>Select</option>
+                    </select>
+                  </div>
+                  <!-- end form group -->
+                   <div class="col-md-6">
+                    <div class="card">
+                        <img class="card-img-top" id="bImage" src="Images/picture.png" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title text-center" id="bTitle"></h4>
+                            <h6 class="card-description text-justify text-center" id="bdescription"></h6>
+                            <p class="card-text text-center pt-3" id="bText"></p>
+                        </div>
+                    </div>
+                   </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <script src="jquery/jquery-3.7.1.js"></script>
+    <script src="bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+    <script>
+        
+        $.ajax({
+            url: "product1.json",
+            type : "get",
+            success: function (response) {
+                // console.log(response.J);
+                response.J.forEach(element => {
+                    $("#jProduct").append(
+                        ` <option value=" `+element.id+`"> `+ element.name +`</option>`
+                    )
+                    
+                });
+                response.Bonanza.forEach(element => {
+                    $("#bProduct").append(
+                        `<option value=" `+element.id+`"> `+ element.name +`</option>`
+                    )
+                    
+                });
+                // end for each
+                $("#jProduct").change(function(){
+                    let jId = $(this).val();
+                    // console.log(jId);
+                    let jRecord = response.J.find(jRec=>jRec.id == jId);
+                    // console.log(jRecord);
+                    if(jRecord){
+                        $("#jImage").attr("src",jRecord.image);
+                        $("#jTitle").text(jRecord.name);
+                        $("#jdescription").text(jRecord.description);
+                        $("#jText").text(jRecord.price);
+
+
+                    }
+                    else{
+                        $("#jImage").attr("src","Images/picture.png");
+                        $("#jTitle").text('No Name');
+                        $("#jdescription").text('No Description');
+                        $("#jText").text('No Price');
+                    }
+                    
+                })
+
+                $("#bProduct").change(function(){
+                    let bId = $(this).val();
+                    // console.log(bId);
+                    let bRecord = response.Bonanza.find(bRec=>bRec.id == bId);
+                    // console.log(bRecord);
+                    if(bRecord){
+                        $("#bImage").attr("src",bRecord.image);
+                        $("#bTitle").text(bRecord.name);
+                        $("#bdescription").text(bRecord.description);
+                        $("#bText").text(bRecord.price);
+                    }
+                    else{
+                        $("#bImage").attr("src","Images/picture.png");
+                        $("#bTitle").text('No Name');
+                        $("#bdescription").text('No Description');
+                        $("#bText").text('No Price');
+                    }
+                })
+
+
+              
+
+              
+            
+        
+               
+
+
+            }
+
+        })
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+
+</body>
+
+</html>

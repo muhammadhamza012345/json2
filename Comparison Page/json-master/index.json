@@ -1,0 +1,7 @@
+{
+    "id" : 1 ,
+"name" : "hamza",
+"phone" : ["0398789796754","976547956487"],
+"address" : {"karachi" : "saddar" , "lahore": "gulberg"},
+"nic" : true 
+}
